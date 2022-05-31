@@ -1,11 +1,11 @@
-#!/usr/bin/python3
+##!/usr/bin/python3
 import random
-number = random.randint(-98, 98)
+number = random.randint(-10, 10)
 if number > 0:
-    print("98 is positive \n")
+    print(f"{number}is positive \n")
 
 if number == 0:
-    print("0 is zero \n")
+    print(f"{number}is zero \n")
 
 if number < 0:
-    print("-98 is negative \n")
+    print(f"{number}is negative \n")
