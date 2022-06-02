@@ -4,4 +4,3 @@ def add(a, b):
 
 
 print("The output is:", add(1, 2))
-print("\n")
