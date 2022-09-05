@@ -1,8 +1,13 @@
 #!/usr/bin/node
-// prints the first argument passed to it
-
-if (process.argv[2] === undefined) {
+// prints the first argument
+const ArgCount = [];
+let ind;
+process.argv.forEach((val, index) => {
+  ArgCount[index] = `${val}`;
+  ind = `${index}`;
+});
+if (ind < 2) {
   console.log('No argument');
 } else {
-  console.log(process.argv[2]);
+  console.log(ArgCount[2]);
 }

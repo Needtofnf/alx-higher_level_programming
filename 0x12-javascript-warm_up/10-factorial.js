@@ -1,12 +1,15 @@
 #!/usr/bin/node
-// computes and prints a factorial
-
+const arg = [];
 function factorial (n) {
-  if ((isNaN(n)) || (n === 1)) {
-    return 1;
+  if (isNaN(n)) {
+    return (1);
+  } else if (n === 1) {
+    return (1);
   } else {
-    return n * factorial(n - 1);
+    return (n * factorial(n - 1));
   }
 }
-
-console.log(factorial(parseInt(process.argv[2])));
+process.argv.forEach((val, index) => {
+  arg[index] = `${val}`;
+});
+console.log(factorial(arg[2]));

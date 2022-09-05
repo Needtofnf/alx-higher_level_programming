@@ -1,4 +1,7 @@
 #!/usr/bin/node
-// It prints 3 lines
-
-console.log('C is fun\nPython is cool\nJavascript is amazing');
+const CPrint = 'C is fun';
+const PythonPrint = 'Python is cool';
+const JavascriptPrint = 'JavaScript is amazing';
+console.log(CPrint);
+console.log(PythonPrint);
+console.log(JavascriptPrint);

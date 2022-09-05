@@ -1,4 +1,6 @@
 #!/usr/bin/node
-// prints two arguments passed to it, in the following format: “ is ”
-
-console.log(process.argv[2] + ' is ' + process.argv[3]);
+const arg = [];
+process.argv.forEach((val, index) => {
+  arg[index] = `${val}`;
+});
+console.log(`${arg[2]} is ${arg[3]}`);

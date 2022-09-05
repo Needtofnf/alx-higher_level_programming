@@ -1,10 +1,16 @@
 #!/usr/bin/node
-// prints a square
-
-if (isNaN(process.argv[2])) {
+const arg = [];
+const { argv } = require('process');
+const square = 'X';
+let x;
+argv.forEach((val, index) => {
+  arg[index] = `${val}`;
+});
+const number = Number(`${arg[2]}`);
+if (isNaN(number)) {
   console.log('Missing size');
 } else {
-  for (let i = 0; i < parseInt(process.argv[2]); i++) {
-    console.log('X'.repeat(parseInt(process.argv[2])));
+  for (x = 0; x < number; x++) {
+    console.log(square.repeat(number));
   }
 }
