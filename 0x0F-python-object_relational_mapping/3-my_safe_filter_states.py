@@ -1,20 +1,23 @@
 #!/usr/bin/python3
-"""
-python script that lists all states from the database hbtn_0e_0_usa with a
-given name and is safe from MySQL injections
-"""
+""" Script that lists all states starting with N"""
 
 import MySQLdb
 from sys import argv
 
-if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                         passwd=argv[2], db=argv[3], charset="utf8")
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC",
-                   (argv[4],))
-    rows = cursor.fetchall()
-    for row in rows:
-        print(row)
-    cursor.close()
+if __name__ == '__main__':
+
+    HOST = 'localhost'
+    PORT = 3306
+    MY_USER = argv[1]
+    MY_PSWD = argv[2]
+    MY_DB = argv[3]
+    NAME = argv[4]
+    db = MySQLdb.connect(host=HOST, user=MY_USER, password=MY_PSWD,
+                         db=MY_DB, port=PORT)
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id", (NAME,))
+    row_query = cur.fetchall()
+    for rq_print in row_query:
+        print(rq_print)
+    cur.close()
     db.close()
