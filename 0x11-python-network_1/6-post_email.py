@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-"""Check status"""
+"""
+Python script that takes in a URL and
+an email address, sends a POST request
+"""
+from sys import argv
 import requests
-import sys
 
-
-def post():
-    """status"""
-    result = requests.post(sys.argv[1], data={"email": sys.argv[2]})
-
-    print(result.text)
 
 if __name__ == "__main__":
-    post()
+    r = requests.post(argv[1], data={'email': argv[2]})
+    print(r.text)
